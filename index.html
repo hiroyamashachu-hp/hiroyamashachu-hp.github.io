@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>廣山社中合同会社</title>
+  <meta name="description" content="次世代エネルギー・パワー技術の設計実装|廣山社中合同会社は、二次電池・燃料電池・モーター・パワー半導体分野において、設計レベルでの技術実装支援を行うエンジニアリング会社です。">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <div id="home" class="hero big-bg">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-dim" aria-hidden="true"></div>
+
+    <header class="page-header wrapper">
+      <h1 class="site-title">
+        <a href="index.html">
+          <img class="logo" src="images/logo.png" alt="廣山社中合同会社 ロゴ">
+          <span>廣山社中合同会社</span>
+        </a>
+      </h1>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html#top">TOP</a></li>
+          <li><a href="news.html#top">お知らせ</a></li>
+          <li><a href="column.html#top">囲込み記事</a></li>
+          <li><a href="contact.html#top">お問合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="home-content wrapper">
+      <h2 class="page-title">匠・技は道となり現在・未来社会をささえる</h2>
+      <p>次世代エネルギーの思想・研究を設計レベルで具現化する。</p>
+      <a class="button" href="column.html#top">囲い記事を見る</a>
+    </div>
+  </div><!-- /#home -->
+
+  <script>
+  (function () {
+    const hero = document.getElementById('home');
+    const media = hero.querySelector('.hero-media');
+    const dim = hero.querySelector('.hero-dim');
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function applyFade() {
+      const vh = Math.max(window.innerHeight, 1);
+      const y = window.scrollY || 0;
+      const end = vh * 0.9;
+      const t = Math.min(Math.max(y / end, 0), 1);
+      const opacity = 1 - t;
+
+      media.style.opacity = opacity.toFixed(3);
+      dim.style.opacity = (0.35 * opacity).toFixed(3);
+    }
+    window.addEventListener('scroll', applyFade, { passive: true });
+    window.addEventListener('resize', applyFade);
+    applyFade();
+
+    if (isMobile || reduceMotion) return;
+
+    function injectVideo() {
+      if (media.querySelector('video')) return;
+
+      const v = document.createElement('video');
+      v.className = 'bg-video';
+      v.src = 'images/mai.mp4.mp4';
+      v.poster = 'images/mai_pster.jpg';  /* ★ここが重要 */
+
+      v.autoplay = true;
+      v.muted = true;
+      v.loop = true;
+      v.playsInline = true;
+      v.preload = 'metadata';
+
+      v.addEventListener('canplay', () => {
+        media.classList.add('is-video-ready');
+      }, { once: true });
+
+      media.appendChild(v);
+      v.play().catch(() => {});
+    }
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(injectVideo, { timeout: 1500 });
+    } else {
+      setTimeout(injectVideo, 300);
+    }
+  })();
+  </script>
+
+</body>
+</html>

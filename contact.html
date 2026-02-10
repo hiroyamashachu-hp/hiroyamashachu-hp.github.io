@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>廣山社中合同会社 - お問合せ</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="contact">
+
+  <!-- ===== HERO（背景はここだけ） ===== -->
+  <section class="hero hero--asagiri hero--full">
+    <header class="page-header">
+      <div class="wrapper header-inner">
+        <h1 class="site-title">
+          <a href="index.html#top">
+            <img class="logo" src="images/logo.png" alt="">
+            <span>廣山社中合同会社</span>
+          </a>
+        </h1>
+
+        <nav>
+          <ul class="main-nav">
+            <li><a href="index.html#top">TOP</a></li>
+            <li><a href="news.html#top">お知らせ</a></li>
+            <li><a href="column.html#top">囲込み記事</a></li>
+            <li><a href="contact.html#top">お問合せ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="wrapper hero-inner">
+      <h2 class="page-title">お問合せ</h2>
+
+<form action="https://formspree.io/f/mnjbnoyl" method="POST">
+ <!-- 種別 -->
+  <div>
+    <label for="category">種別</label>
+    <select id="category" name="category" required>
+      <option value="" disabled selected>選択してください</option>
+      <option value="相談（技術・業務）">相談（技術・業務）</option>
+      <option value="採用">採用</option>
+      <option value="取材・講演">取材・講演</option>
+      <option value="その他">その他</option>
+    </select>
+  </div>
+
+  <!-- お名前 -->
+  <div>
+    <label for="name">お名前</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <!-- メール -->
+  <div>
+    <label for="email">メールアドレス</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <!-- 内容 -->
+  <div>
+    <label for="message">お問い合わせ内容</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+
+  <!-- 🔒 実務フィルタ（ここ！） -->
+  <div>
+    <label>
+      <input type="checkbox" name="no_sales" required>
+      営業・売り込み目的の送信ではありません（営業は返信しません）
+    </label>
+  </div>
+<input type="hidden" name="purpose" value="non-sales">
+  <!-- 送信 -->
+  <input type="submit" value="送信する" class="button">
+</form>
+    </div>
+  </section>
+  <!-- ===== /HERO ===== -->
+
+
+  <!-- ===== 下側（背景なし：白） ===== -->
+  <main class="page-body">
+    <section id="location">
+      <div class="wrapper">
+        <div class="location-info">
+          <h3 class="sub-title">廣山社中合同会社</h3>
+          <p>
+            住所： 千葉県柏市<br>
+            若柴 1番地２００ー１階<br>
+            〒277-0871<br>
+            営業時間： 9:00〜20:00<br>
+            休日：日曜日・祝祭日<br>
+
+            代表CEO 廣岡　真志<br>
+            法政大学卒業<br>
+            銅箔ドラムの電解層の<br>
+            電極、電解層開発<br>
+            上場会社でモーター<br>
+            エンジン開発<br>
+            二次・燃料電池研究開発<br>
+            モーター・パワー半導体<br>
+            研究開発<br>
+            ATV.乗用車車両開発設計<br>
+            その他プラント開発設計<br>
+            （圧力容器.熱交換器等）<br>
+          </p>
+        </div>
+
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.348932984029!2d139.95673497431952!3d35.889468872520695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60189c41acd24751%3A0xa6b5bc0a3a3b302b!2z44CSMjc3LTA4NzEg5Y2D6JGJ55yM5p-P5biC6Iul5p-077yR4oiS77yS77yQ77yQ!5e0!3m2!1sja!2sjp!4v1770214141960!5m2!1sja!2sjp"
+            width="800" height="400" style="border:0;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <p><small>&copy; 2023 Manabox</small></p>
+    </div>
+  </footer>
+
+</body>
+</html>
