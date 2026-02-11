@@ -1465,3 +1465,193 @@ form div label{
 form input[type="checkbox"]{
   margin-right: 6px;
 }
+/* ==============================
+   contact：スパム防止文言の調整
+   ============================== */
+
+/* スパム防止テキスト（p / label 両対応） */
+#contact .spam-note,
+#contact label.spam-note,
+#contact form label,
+#contact form p {
+  display: block;
+  margin-top: 18px;     /* ← メッセージ枠との間隔 */
+  margin-bottom: 18px;  /* ← 送信ボタンとの間隔 */
+
+  color: #ffffff;       /* ← 白文字 */
+  font-size: 14pt;      /* ← サイズ（12〜16ptで調整可） */
+  line-height: 1.6;
+
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6); /* 背景に負けない */
+}
+
+/* チェックボックスがある場合の微調整 */
+#contact input[type="checkbox"] {
+  margin-right: 6px;
+  transform: translateY(1px);
+}
+
+/* 送信ボタンと被らないように */
+#contact input[type="submit"] {
+  margin-top: 24px;
+}
+/* ===== index 背景動画：画面フル（文字に影響なし） ===== */
+
+/* #home を“1画面”として固定 */
+#home{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 背景レイヤー（動画の器） */
+#home .hero-media{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* 暗幕 */
+#home .hero-dim{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0,0,0,0.35);
+}
+
+/* 動画本体：100vw/100vhで必ず覆う */
+#home .bg-video{
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* 文字（ヘッダー/本文）は必ず上へ */
+#home .page-header,
+#home .home-content{
+  position: relative;
+  z-index: 2;
+}
+/* ===== index動画：最終固定（これが勝つ） ===== */
+#home { position: relative; height: 100vh; overflow: hidden; }
+
+#home .hero-media { position: absolute; inset: 0; z-index: 0; }
+#home .hero-dim   { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,.35); }
+
+/* canplay まで透明 → 準備できたら表示 */
+#home .bg-video { opacity: 0; transition: opacity .4s ease; }
+#home .hero-media.is-video-ready .bg-video { opacity: 1; }
+
+/* videoを全面に */
+#home video.bg-video{
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* 文字を前面に */
+#home .page-header, #home .home-content { position: relative; z-index: 2; }
+/* ===== index 背景動画：黒帯ゼロ（最終上書き） ===== */
+#home{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 動画の器を画面いっぱいに */
+#home .hero-media{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* video自体を確実に “画面を覆う” 設定 */
+#home .hero-media video.bg-video{
+  position: absolute;
+  inset: 0;
+
+  /* ★ここが黒帯対策の本体 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* 画面を覆う（切れてOK） */
+  object-position: center center;
+
+  /* 以前のズラし/縮小/ぼかしが残っても無効化 */
+  transform: none !important;
+  filter: none !important;
+}
+
+/* それでも左右に2〜3mm出るブラウザ対策（保険） */
+#home .hero-media video.bg-video{
+  width: 102%;
+  height: 102%;
+  left: -1%;
+  top: -1%;
+}
+#home.hero{ height: 100vh !important; min-height: 100vh !important; 
+}
+/* ===============================
+   ✅ index 背景動画：黒帯ゼロ・フル画面固定
+================================ */
+
+/* 1. 親要素の固定 */
+#home {
+  position: relative;
+  height: 100vh !important; /* 画面の高さに固定 */
+  min-height: 100vh !important;
+  overflow: hidden;
+}
+
+/* 2. 動画の器（hero-media）を全面に */
+#home .hero-media {
+  position: absolute;
+  inset: 0; /* 上下左右 0 */
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* 3. 動画本体：ここが解決の鍵 */
+#home .hero-media images.bg-mai.mp4.mp4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* 画面よりわずかに大きく配置して、隙間を物理的に防ぐ */
+  width: 102vw; 
+  height: 102vh;
+  /* 中央配置 */
+  transform: translate(-50%, -50%) !important;
+  /* アスペクト比を無視して埋める */
+  object-fit: cover !important;
+  object-position: center center;
+  
+  /* ぼかしや透過の干渉を防ぐ */
+  filter: none !important;
+}
+
+/* 4. 暗幕も全面に */
+#home .hero-dim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; /* 下の動画の再生を邪魔しない */
+}
+
+/* 5. コンテンツを前面へ */
+#home .page-header,
+#home .home-content {
+  position: relative;
+  z-index: 2;
+}
+
+
