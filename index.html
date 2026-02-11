@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>廣山社中合同会社</title>
   <meta name="description" content="次世代エネルギー・パワー技術の設計実装|廣山社中合同会社は、二次電池・燃料電池・モーター・パワー半導体分野において、設計レベルでの技術実装支援を行うエンジニアリング会社です。">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -12,7 +14,10 @@
 <body id="top">
 
   <div id="home" class="hero big-bg">
+    <!-- LCP対策：最初は静止画（CSS背景）で表示 → 後から動画を挿入 -->
     <div class="hero-media" aria-hidden="true"></div>
+
+    <!-- 読みやすさ用の暗幕（背景と一緒にスクロールでフェードアウト） -->
     <div class="hero-dim" aria-hidden="true"></div>
 
     <header class="page-header wrapper">
@@ -22,6 +27,7 @@
           <span>廣山社中合同会社</span>
         </a>
       </h1>
+
       <nav>
         <ul class="main-nav">
           <li><a href="index.html#top">TOP</a></li>
@@ -45,12 +51,16 @@
     const media = hero.querySelector('.hero-media');
     const dim = hero.querySelector('.hero-dim');
 
+    // スマホ判定（幅）＋省電力/アクセシビリティ設定
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // スクロールで「背景（動画＋暗幕）」だけフェードアウト
     function applyFade() {
       const vh = Math.max(window.innerHeight, 1);
-      const y = window.scrollY || 0;
+      const y = window.scrollY || window.pageYOffset || 0;
+
+      // 0〜(0.9vh) の間で 1 → 0
       const end = vh * 0.9;
       const t = Math.min(Math.max(y / end, 0), 1);
       const opacity = 1 - t;
@@ -58,19 +68,23 @@
       media.style.opacity = opacity.toFixed(3);
       dim.style.opacity = (0.35 * opacity).toFixed(3);
     }
+
     window.addEventListener('scroll', applyFade, { passive: true });
     window.addEventListener('resize', applyFade);
     applyFade();
 
+    // スマホ or 動きを減らす設定：動画を読み込まない（静止画のまま）
     if (isMobile || reduceMotion) return;
 
+    // LCP対策：初期表示は静止画 → 後から video を挿入して読み込み開始
     function injectVideo() {
       if (media.querySelector('video')) return;
 
       const v = document.createElement('video');
       v.className = 'bg-video';
+
+      // ★あなたのファイル名そのまま（.mp4.mp4）
       v.src = 'images/mai.mp4.mp4';
-      v.poster = 'images/mai_pster.jpg';  /* ★ここが重要 */
 
       v.autoplay = true;
       v.muted = true;
@@ -78,6 +92,10 @@
       v.playsInline = true;
       v.preload = 'metadata';
 
+      // ★あなたのファイル名そのまま（mai_poster.png）
+      v.poster = 'images/mai_poster.png';
+
+      // 再生準備が整ったら動画をフェードイン
       v.addEventListener('canplay', () => {
         media.classList.add('is-video-ready');
       }, { once: true });
@@ -86,6 +104,7 @@
       v.play().catch(() => {});
     }
 
+    // requestIdleCallback があればアイドル時に、なければ少し遅らせて実行
     if ('requestIdleCallback' in window) {
       requestIdleCallback(injectVideo, { timeout: 1500 });
     } else {
