@@ -117,48 +117,5 @@
 
 <!-- BGM -->
 <audio id="bgm" src="audio/bgm.mp3" loop preload="auto"></audio>
-<script>
-(() => {
-  const bgm = document.getElementById('bgm');
-  if (!bgm) return;
-
-  const start = async () => {
-    try {
-      bgm.muted = false;
-      bgm.volume = 0.3;
-      await bgm.play();
-    } catch (e) {}
-    window.removeEventListener('pointerdown', start);
-    window.removeEventListener('keydown', start);
-  };
-
-  window.addEventListener('pointerdown', start, { passive: true });
-  window.addEventListener('keydown', start);
-})();
-</script>
-
-<button id="playBtn" style="
-position:fixed;
-bottom:20px;
-right:20px;
-z-index:9999;
-padding:10px 20px;
-background:#000;
-color:#fff;
-">
-BGM再生
-</button>
-
-<audio id="bgm" src="audio/bgm.mp3"></audio>
-
-<script>
-document.getElementById("playBtn").onclick = function() {
-  const bgm = document.getElementById("bgm");
-  bgm.volume = 0.5;
-  bgm.play();
-};
-</script>
-
-
 </body>
 </html>
