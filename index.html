@@ -5,7 +5,6 @@
   <title>廣山社中合同会社</title>
   <meta name="description" content="次世代エネルギー・パワー技術の設計実装|廣山社中合同会社は、二次電池・燃料電池・モーター・パワー半導体分野において、設計レベルでの技術実装支援を行うエンジニアリング会社です。">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
@@ -13,105 +12,153 @@
 
 <body id="top">
 
-  <div id="home" class="hero big-bg">
-    <!-- LCP対策：最初は静止画（CSS背景）で表示 → 後から動画を挿入 -->
-    <div class="hero-media" aria-hidden="true"></div>
+<div id="home" class="hero big-bg">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-dim" aria-hidden="true"></div>
 
-    <!-- 読みやすさ用の暗幕（背景と一緒にスクロールでフェードアウト） -->
-    <div class="hero-dim" aria-hidden="true"></div>
+<header class="page-header wrapper">
+    <h1 class="site-title">
+      <a href="index.html">
+        <img class="logo" src="images/logo.png" alt="廣山社中合同会社 ロゴ">
+        <span>廣山社中合同会社</span>
+      </a>
+    </h1>
+    <nav>
+  <ul class="main-nav">
+    <li><a href="index.html#top">TOP</a></li>
+    <li><a href="news.html#top">お知らせ</a></li>
+    <li><a href="column.html#top">囲込み記事</a></li>
+    <li><a href="contact.html#top">お問合わせ</a></li>
+  </ul>
+</nav>
 
-    <header class="page-header wrapper">
-      <h1 class="site-title">
-        <a href="index.html">
-          <img class="logo" src="images/logo.png" alt="廣山社中合同会社 ロゴ">
-          <span>廣山社中合同会社</span>
-        </a>
-      </h1>
+  </header>
 
-      <nav>
-        <ul class="main-nav">
-          <li><a href="index.html#top">TOP</a></li>
-          <li><a href="news.html#top">お知らせ</a></li>
-          <li><a href="column.html#top">囲込み記事</a></li>
-          <li><a href="contact.html#top">お問合わせ</a></li>
-        </ul>
-      </nav>
-    </header>
+  <div class="home-content wrapper">
+    <h2 class="page-title">匠・技は道となり現在・未来社会をささえる</h2>
+    <p>次世代エネルギーの思想・研究を設計レベルで具現化する。</p>
+  </div>
+</div>
 
-    <div class="home-content wrapper">
-      <h2 class="page-title">匠・技は道となり現在・未来社会をささえる</h2>
-      <p>次世代エネルギーの思想・研究を設計レベルで具現化する。</p>
-      <a class="button" href="column.html#top">囲い記事を見る</a>
-    </div>
-  </div><!-- /#home -->
+<script>
+(function () {
 
-  <script>
-  (function () {
-    const hero = document.getElementById('home');
-    const media = hero.querySelector('.hero-media');
-    const dim = hero.querySelector('.hero-dim');
+  const hero = document.getElementById('home');
+  const media = hero.querySelector('.hero-media');
+  const dim = hero.querySelector('.hero-dim');
 
-    // スマホ判定（幅）＋省電力/アクセシビリティ設定
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const playlist = [
+    "video/mai.mp4.mp4",
+    "video/mai.mp4.mp4",
+    "video/mai1.mp4.mp4",
+    "video/mai1.mp4.mp4"
+  ];
 
-    // スクロールで「背景（動画＋暗幕）」だけフェードアウト
-    function applyFade() {
-      const vh = Math.max(window.innerHeight, 1);
-      const y = window.scrollY || window.pageYOffset || 0;
+  let index = 0;
+  let videoElement = null;
 
-      // 0〜(0.9vh) の間で 1 → 0
-      const end = vh * 0.9;
-      const t = Math.min(Math.max(y / end, 0), 1);
-      const opacity = 1 - t;
+  function applyFade() {
+    const vh = Math.max(window.innerHeight, 1);
+    const y = window.scrollY || 0;
+    const end = vh * 0.9;
+    const t = Math.min(Math.max(y / end, 0), 1);
+    const opacity = 1 - t;
 
-      media.style.opacity = opacity.toFixed(3);
-      dim.style.opacity = (0.35 * opacity).toFixed(3);
+    media.style.opacity = opacity.toFixed(3);
+    dim.style.opacity = (0.35 * opacity).toFixed(3);
+  }
+
+  window.addEventListener('scroll', applyFade, { passive: true });
+  window.addEventListener('resize', applyFade);
+  applyFade();
+
+  function playNext() {
+    index = (index + 1) % playlist.length;
+    videoElement.src = playlist[index];
+    videoElement.load();
+    videoElement.play().catch(()=>{});
+  }
+
+  function injectVideo() {
+    videoElement = document.createElement('video');
+    videoElement.className = 'bg-video';
+
+    videoElement.src = playlist[0];
+    videoElement.autoplay = true;
+    videoElement.muted = true;
+    videoElement.playsInline = true;
+    videoElement.preload = 'metadata';
+    videoElement.loop = false;
+    videoElement.poster = "video/mai_poster.png";
+
+    videoElement.addEventListener('ended', playNext);
+
+    videoElement.addEventListener('canplay', () => {
+      media.classList.add('is-video-ready');
+    }, { once: true });
+
+    media.appendChild(videoElement);
+    videoElement.play().catch(()=>{});
+  }
+
+  injectVideo();
+
+  // ===== BGM =====
+  const bgm = document.getElementById('bgm');
+  window.addEventListener("click", function() {
+    if (bgm) {
+      bgm.volume = 0.3;
+      bgm.play().catch(()=>{});
     }
+  }, { once: true });
 
-    window.addEventListener('scroll', applyFade, { passive: true });
-    window.addEventListener('resize', applyFade);
-    applyFade();
+})();
+</script>
 
-    // スマホ or 動きを減らす設定：動画を読み込まない（静止画のまま）
-    if (isMobile || reduceMotion) return;
+<!-- BGM -->
+<audio id="bgm" src="audio/bgm.mp3" loop preload="auto"></audio>
+<script>
+(() => {
+  const bgm = document.getElementById('bgm');
+  if (!bgm) return;
 
-    // LCP対策：初期表示は静止画 → 後から video を挿入して読み込み開始
-    function injectVideo() {
-      if (media.querySelector('video')) return;
+  const start = async () => {
+    try {
+      bgm.muted = false;
+      bgm.volume = 0.3;
+      await bgm.play();
+    } catch (e) {}
+    window.removeEventListener('pointerdown', start);
+    window.removeEventListener('keydown', start);
+  };
 
-      const v = document.createElement('video');
-      v.className = 'bg-video';
+  window.addEventListener('pointerdown', start, { passive: true });
+  window.addEventListener('keydown', start);
+})();
+</script>
 
-      // ★あなたのファイル名そのまま（.mp4.mp4）
-      v.src = 'images/mai.mp4.mp4';
+<button id="playBtn" style="
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:9999;
+padding:10px 20px;
+background:#000;
+color:#fff;
+">
+BGM再生
+</button>
 
-      v.autoplay = true;
-      v.muted = true;
-      v.loop = true;
-      v.playsInline = true;
-      v.preload = 'metadata';
+<audio id="bgm" src="audio/bgm.mp3"></audio>
 
-      // ★あなたのファイル名そのまま（mai_poster.png）
-      v.poster = 'images/mai_poster.png';
+<script>
+document.getElementById("playBtn").onclick = function() {
+  const bgm = document.getElementById("bgm");
+  bgm.volume = 0.5;
+  bgm.play();
+};
+</script>
 
-      // 再生準備が整ったら動画をフェードイン
-      v.addEventListener('canplay', () => {
-        media.classList.add('is-video-ready');
-      }, { once: true });
-
-      media.appendChild(v);
-      v.play().catch(() => {});
-    }
-
-    // requestIdleCallback があればアイドル時に、なければ少し遅らせて実行
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(injectVideo, { timeout: 1500 });
-    } else {
-      setTimeout(injectVideo, 300);
-    }
-  })();
-  </script>
 
 </body>
 </html>
