@@ -1,1201 +1,217 @@
 @charset "UTF-8";
 
-/* 共通部分
-------------------------------- */
-html {
-    font-size: 100%;
-}
-body {
-    font-family:
-        "Yu Mincho",
-        "游明朝",
-        "Hiragino Mincho ProN",
-        "ヒラギノ明朝 ProN",
-        "MS Mincho",
-        serif;
-    line-height: 1.9;
-    color: #472f91;
-}
-    
-a {
-    text-decoration: none;
-}
-img {
-    max-width: 100%;
-}
-/* HEADER
-------------------------------- */
-.logo {
-    width: 140px;
-    margin-top: 7px;
-}
-.site-title span {
-    margin-left: 7px;
-    font-size: 8px;
-}
-.main-nav {
-    display: flex;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    margin-top: 30px;
-    list-style: none;
-}
-.main-nav li {
-    margin-left: 36px;
-}
-.main-nav a {
-    color: #472f91;
-}
-.main-nav a:hover {
-    color: #0bd;
-    margin-top: 10px; 
-}
-.wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2%;
-}
-.site-title a {
-    display: flex;
-    align-items: center; 
-    margin-top: margin-top: 0 !important; 
-}
-.site-title span {
-    margin-left: 6px;
-    font-family: inherit;
-    font-size: 30px;
-    letter-spacing: 0.3em;
-    transform: translateY(-7px); 
-}
-
-.page-title { margin-top: 0 !important; transform: none !important; }
-
-/* HOME
-------------------------------- */
-.home-content {
-    position: relative;
-    text-align: center;
-    margin-top: 10%;
-}
-.home-content p {
-    font-size: 1.3rem;   
-    line-height: 2.1;
-    margin: 20px 0 48px;
-    transform: translateY(-90px); 
-}
-.home-content h2 {
-    font-size: 1.8rem;   
-    line-height: 2.1;
-    margin: 20px 0 48px;
-    transform: translateY(-40px);
-}
-/* 見出し */
-.page-title {
-     font-size: 1.8rem; 
-    font-weight: normal;
-    letter-spacing: 0.08em;
-    margin-top: 0 !important; transform: none !important; }
-
-/* ボタン */
-.button {
-    font-size: 1.375rem;
-    background: #472f91;
-    color: #fff;
-    border-radius: 5px;
-    padding: 18px 32px;
-    transform: translateY(-30px);
-}
-.button:hover {
-    background: #0090aa;
-}
-/* 大きな背景画像 */
-.big-bg {
-    background-size: contain;
-    background-position: center top;
-}
-#home {
-    min-height: 100vh;
-    background-image: url(../images/5sky.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;  
-}
-#home .page-title {
-    transform: translateY(-18px);
-}
-.page-header{
-  background: transparent;
-}
-.header-inner {
-  display: flex;
-  align-items: baseline;   
-}
-/* フッター
-------------------------------- */
-footer {
-    background: #432;
-    text-align: center;
-    padding: 26px 0;
-}
-footer p {
-  color: #fff;
-  font-size: 1rem; /* ← 0.875rem を廃止 */
-}
-/* 記事部分 */
-article {
-    width: 74%;
-}
-
-/* サイドバー */
-aside {
-    width: 22%;
-}
-.news-contents {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-}
-.post-info {
-    position: relative;
-    padding-top: 4px;
-    margin-bottom: 40px;
-}
-.post-date {
-    background: #0bd;
-    border-radius: 50%;
-    color: #fff;
-    width: 100px;
-    height: 100px;
-    font-size: 1.625rem;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    padding-top: 10px;
-}
-.post-date span {
-    font-size: 1rem;
-    border-top: 1px rgba(255,255,255,.5) solid;
-    padding-top: 6px;
-    display: block;
-    width: 60%;
-    margin: 0 auto;
-}
-.post-title {
-    font-family: "Yu Mincho", "YuMincho", serif;
-    font-size: 2rem;
-    font-weight: normal;
-}
-.post-title,
-.post-cat {
-    margin-left: 120px;
-}
-article img {
-    margin-bottom: 20px;
-}
-article p {
-    margin-bottom: 1rem;
-}
-.sub-title {
-    font-size: 1.375rem;
-    padding: 0 8px 8px;
-    border-bottom: 2px #0bd solid;
-    font-weight: normal;
-}
-aside p {
-    padding: 12px 10px;
-}
-.sub-menu {
-    margin-bottom: 60px;
-    list-style: none;
-}
-.sub-menu li {
-    border-bottom: 1px #ddd solid;
-}
-.sub-menu a {
-    color: #432;
-    padding: 10px;
-    display: block;
-}
-.sub-menu a:hover {
-    color: #0bd;
-}
-#news {
-  background-image: url("../images/14yoake.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 1000px;     /* ← 上端からしっかり背景 */
-  display: flex;         /* ← ここ重要 */
-  flex-direction: column;
-}
-
-.news-inner {
-  flex: 1;
-  display: flex;         /* ← ここ重要 */
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 24px 0 48px;
-}
-.page-header {
-  background: transparent;   /* ヘッダーの白を消す */
-}
-.news-inner {
-  flex: 1;
-  display: flex;         /* ← ここ重要 */
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 24px 0 48px;
-}
-@media (max-width: 600px) {
-  #column {
-    min-height: 200px; 
-  }
-}
-/* 囲込み記事
-------------------------------- */
-#column {
-  background-image: url("../images/8yuuyami.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-}
-.page-header {
-  background: transparent;   /* ヘッダーの白を消す */
-}
-
-.column-inner {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* 見出し＋説明文を縦中央 */
-  text-align: center;
-  transform: translateY(-30px);
-}
-@media (max-width: 600px) {
-  #column {
-    min-height: 200px;
-  }
-}
-/* article1
-------------------------------- */
-#article1 {
-  background-image: url("../images/purple.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-}
-.page-header {
-  background: transparent;   /* ヘッダーの白を消す */
-}
-
-.article1-inner {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* 見出し＋説明文を縦中央 */
-  text-align: center;
-  transform: translateY(-10px);
-}
-.grid {
-  display: grid;
-  gap: 26px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 6%;
-  margin-bottom: 50px;
-}
-.grid {
-    display: grid;
-    gap: 26px;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 6%;
-    margin-bottom: 50px;
-}
-.grid {
-    display: grid;
-    gap: 26px;
-    grid-template-columns: repeat(3, minmax(240px, 1fr));
-    margin-top: 6%;
-    margin-bottom: 50px;
-}
-.grid {
-    display: grid;
-    gap: 26px;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    margin-top: 6%;
-    margin-bottom: 50px;
-}
-@media (max-width: 600px) {
-   #article1{ min-height: 200px; }
-  }
-
-}
-.grid .item{
-  display: block;      /* aをブロック化してカード化 */
-  color: inherit;      /* 文字色を親と同じにする（青リンク防止） */
-}
-
-.grid .item:hover{
-  opacity: 0.85;       /* ホバー時に少し反応 */
-}
-
-.grid .item p{
-  margin-top: 8px;     /* 文字の余白はお好みで */
-}
-/* ===== 記事ページ専用 ===== */
-
-.article-layout{
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-  margin-bottom: 80px;
-}
-
-.article-main{
-  width: 70%;
-}
-
-/* 見出し */
-.article-heading{
-  font-size: 1.6rem;
-  margin: 40px 0 16px;
-  border-bottom: 2px solid #472f91;
-  padding-bottom: 6px;
-}
-
-/* ダミー本文（文字をまだ書かない前提） */
-.dummy-box{
-  height: 140px;
-  background: #f3f3f3;
-  margin-bottom: 30px;
-}
-
-/* 戻るリンク */
-.back-link{
-  display: inline-block;
-  margin-top: 40px;
-  color: #472f91;
-}
-.back-link:hover{
-  text-decoration: underline;
-}
-
-/* レスポンシブ */
-@media (max-width: 768px){
-  .article-main{
-    width: 100%;
-  }
-}
-.article2-main p {
-  font-size: 14pt;
-  line-height: 1.9;   /* ← 今の行間は良いので維持 */
-}
-/* ===== HERO 共通（背景を画面上端〜ヘッダー背後まで） ===== */
-.hero{
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ヘッダーは背景の上に載せる */
-.hero .page-header{
-  background: transparent;
-  padding: 20px 0;
-}
-
-/* ヘッダー中身は中央寄せ */
-.header-inner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ヒーロー内の見出しを中央寄せ */
-.hero-inner{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 0 60px;
-}
-
-/* ヒーロー内のタイトルと説明文の間隔をあける */
-.hero-inner .page-title{
-  margin-bottom: 24px;   /* ← 見出しと本文の距離 */
-}
-
-.hero-inner p{
-  margin-top: 0;
-  line-height: 1.8;      /* ← 行間も少し広げると読みやすい */
-}
-/* マイナス余白やtransformを使わない */
-.page-title{
-  margin-top: 0;
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: 0.08em;
-  transform: translateY(-18px);
-}
-
-/* site-titleの謎マージン撤廃（崩れ防止） */
-.site-title a{
-  margin-top: 0;
-}
-
-/* ===== 背景のバリエーション（必要な数だけ増やす） ===== */
-.hero--purple{
-  background-image: url("../images/purple.png");
-}
-
-.hero--sky{
-  background-image: url("../images/5sky.png");
-}
-
-.hero--yoake{
-  background-image: url("../images/14yoake.png");
-}
-.hero--yuuyami{
-  background-image: url("../images/8yuuyami.png");
-}
-/* モバイル */
-@media (max-width: 600px){
-  .hero{
-    min-height: 200px;
-  }
-}
-/* フォーム */
-form div {
-    margin-bottom: 14px;
-}
-label {
-    font-size: 1.125rem;
-    margin-bottom: 10px;
-    display: block;
-}
-input[type="text"],
-input[type="email"],
-textarea {
-    background: rgba(255,255,255,.5);
-    border: 1px #fff solid;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1rem;
-}
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    max-width: 240px;
-}
-textarea {
-    width: 100%;
-    max-width: 480px;
-    height: 6rem;
-}
-input[type="submit"] {
-    border: none;
-    cursor: pointer;
-    line-height: 1;
-}
-    /* CONTACT */
-    #contact .page-title {
-        margin-top: 40px;
-    }
-
-    /* フォーム */
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        max-width: 100%;
-    }
-/* CONTACT
-------------------------------- */
-#contact{
-  background-image: url("../images/5hinode.png"); /* まず確実に存在する画像で試す */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 1000px;
-  display: flex;
-  flex-direction: column;
-}
-/* 店舗情報・地図 */
-#location {
-    padding: 4% 0;
-}
-#location .wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-.location-info {
-    width: 22%;
-}
-.location-info p {
-    padding: 12px 10px;
-}
-.location-map {
-    width: 74%;
-}
-/* iframe */
-iframe {
-    width: 100%;
-}
-/* ===== HERO（上端まで背景） ===== */
-.hero{
-  min-height: 70vh;          /* 画面上端〜ヒーロー下端まで背景 */
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 背景バリエーション */
-.hero--purple{
-  background-image: url("../images/purple.png");
-}
-
-/* headerは背景の上に載るだけ（余計なmargin禁止） */
-.hero .page-header{
-  background: transparent;
-  padding: 16px 0;
-}
-
-/* ヘッダーの中身 */
-.header-inner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* 見出しエリアを中央寄せ */
-.hero-inner{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 24px 0 48px;
-}
-
-/* “ズラし”を全面禁止（ここが効きます） */
-.site-title a{ margin-top: 0 !important; }
-.page-title{ margin-top: 0 !important; transform: none !important; }
-
-/* 念のため */
-body{ margin: 0; }
-
-#news { display: flex; }
-.news-inner { display: flex; }
-
-#contact{
-  background-image: url("../images/contact-sky.png");
-  min-height: 120vh;
-}
-/* articleページは1カラム固定 */
-.article-layout{
-  display: block;
-}
-
-.article-main{
-  width: 100%;
-}
-
-/* コメント・今後の展開が横に来ないように */
-.article-main *{
-  float: none !important;
-}
-/* ヘッダー構造を完全固定 */
-.page-header{
-  width: 100%;
-}
-
-.header-inner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-title a{
-  display: flex;
-  align-items: center;
-  margin-top: 0 !important;
-}
-/* ===== ヘッダー：index型（header自体がwrapper） ===== */
-.page-header.wrapper{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ===== ヘッダー：contact型（headerの中にwrapperがある） ===== */
-.page-header:not(.wrapper) .wrapper{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* 念のため：タイトル周り */
-.site-title a{
-  display: flex;
-  align-items: center;
-  margin-top: 0 !important;
-}
-
-/* ===== CONTACT 背景を確実に表示（最終勝者） ===== */
-#contact{
-  background-image: url("../images/3morning.png");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-/* HERO共通（背景を全面に） */
-.hero{
-  min-height: 1000px;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-}
-@media (max-width: 550px){
-  .hero{ min-height: 200px; }
-}
-/* 背景バリエーション（好きなだけ増やせる） */
-.hero--yoake{  background-image: url("../images/14yoake.png"); }
-.hero--sky{     background-image: url("../images/5sky.png"); }
-.hero--asagiri{ background-image: url("../images/1asagiri.png"); }
-.hero--hinode{  background-image: url("../images/5hinode.png"); }
-.hero--moon{  background-image: url("../images/12moon.png"); }
-.hero--all{  background-image: url("../images/3morning.png"); }
-article p {
-  white-space: pre-line;
-}.page-title{
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
-}
-.page-title{
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  line-height: 1.35;                    /* ← 干渉防止 */
-  margin-bottom: 0.6em;                 /* ← h2とpの距離 */
-  color: rgba(255,255,255,0.95);
-  text-shadow: 0 6px 22px rgba(0,0,0,0.75);
-}
-
-.home-content p{
-  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-  line-height: 1.7;
+/* ===============================
+   Base
+================================ */
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body{
   margin: 0;
-  color: rgba(255,255,255,0.90);
-  text-shadow: 0 4px 16px rgba(0,0,0,0.65);
-}.home-content p{
-  transform: translateY(-60px);  /* ← 湖側へ下げる量 */
+  font-family:
+    "Yu Mincho","游明朝","Hiragino Mincho ProN","ヒラギノ明朝 ProN","MS Mincho",serif;
+  line-height: 1.9;
+  color: #472f91;
+  background: #fff;
 }
-html{
-  font-size: 18.7px; /* ≒14pt */
-}
+a{ text-decoration: none; color: inherit; }
+img{ max-width: 100%; height: auto; display: block; }
 
-body{
-  font-size: 1rem;
-}
-/* =====================================
-   🔒 最小文字サイズ14pt保証（最終上書き）
-   14pt ≒ 18.7px
-===================================== */
-
-html{
-  font-size: 18.7px;
-}
-
-body{
-  font-size: 1rem;
-}
-
-/* 小さい文字を作れないようにする */
-p, li, a, span, figcaption, small{
-  font-size: 1em;
-}
-
-/* 記事本文は特に厳格に */
-.article-main{
-  font-size: 1rem;
-}
-
-.article-main p{
-  font-size: 1em;
-}
-/* ===== Hero（LCP: まず静止画→後から動画） ===== */
-
-/* まず静止画を背景として表示（LCP対策） */
-#home.hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-
-  /* ★ここが静止画。用意したポスター画像に合わせる */
-  background-image: url("../images/mai_poster.jpg");
-  /* もしポスター未作成なら一旦これでもOK：
-     background-image: url("../images/5sky.png"); */
-
-  background-size: cover;
-  background-position: center;
-}
-
-/* 動画を後から入れる器（最初は透明→再生準備できたら表示） */
-.hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 1;
-  transition: opacity 350ms ease;
-}
-
-/* 暗幕（動画と一緒にフェードアウト） */
-.hero-dim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: 0.35;
-  transition: opacity 350ms ease;
-  background: rgba(0, 0, 0, 1);
-}
-
-/* 動画本体（全面敷き） */
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  opacity: 0; /* canplay まで一旦隠す（静止画の方が先に見える） */
-  transition: opacity 500ms ease;
-}
-
-/* 再生準備できたら、動画をフェードイン */
-.hero-media.is-video-ready .bg-video {
-  opacity: 1;
-}
-
-/* ヘッダーや文字は動画より上 */
-#home .page-header,
-#home .home-content {
-  position: relative;
-  z-index: 2;
-}
-
-/* スマホは動画を出さない（静止画だけ） */
-@media (max-width: 768px) {
-  .hero-media { display: none; }
-  .hero-dim { opacity: 0.25; }
-}
-
-/* 動きを減らす設定の人にも配慮（静止画だけ） */
-@media (prefers-reduced-motion: reduce) {
-  .hero-media { display: none; }
-}
-/* ===== Hero（静止画→動画差し替え / スクロールで背景フェード / スマホ静止画） ===== */
-
-/* LCP対策：最初は静止画を背景として表示（※ファイル名は mai_pster.jpg） */
-#home.hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-
-  background-image: url("../images/mai_poster.png");
-  background-size: cover;
-  background-position: center;
-
-  /* 保険：万一画像が読めない時も白紙にしない */
-  background-color: #000;
-}
-
-/* 動画を後から入れる器（背景として全面） */
-.hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 1;
-  transition: opacity 350ms ease;
-}
-
-/* 暗幕（背景と一緒にフェードアウト） */
-.hero-dim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: 0.35;
-  transition: opacity 350ms ease;
-  background: rgba(0,0,0,1);
-}
-
-/* 動画本体（全面敷き） */
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-
-  opacity: 0;                 /* canplay まで隠す */
-  transition: opacity 500ms ease;
-}
-
-/* 再生準備できたら動画をフェードイン */
-.hero-media.is-video-ready .bg-video {
-  opacity: 1;
-}
-
-/* ヘッダーや文字は背景より上に */
-#home .page-header,
-#home .home-content {
-  position: relative;
-  z-index: 2;
-}
-
-/* スマホは静止画だけ（動画を読み込まない＋表示もしない） */
-@media (max-width: 768px) {
-  .hero-media { display: none; }
-  .hero-dim { opacity: 0.25; }
-}
-
-/* 動きを減らす設定の人にも配慮（静止画のみ） */
-@media (prefers-reduced-motion: reduce) {
-  .hero-media { display: none; }
-}
-/* ===== index hero video 黒帯対策：確実に全面cover ===== */
-#home.hero,
-#home {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* 背景を黒にしてると、coverできてない時に黒帯が見えるので “cover優先” にする */
-.hero-media { position:absolute; inset:0; z-index:0; }
-
-/* これが効く：vw/vhで覆ってからobject-fit */
-.bg-video{
-  position:absolute;
-  inset:0;
-  width:100vw;
-  height:100vh;
-  min-width:100%;
-  min-height:100%;
-  object-fit:cover;
-  object-position:center center;
-  transform:none;           /* 以前のtranslate(-50%,-50%)が残ってる場合は打ち消す */
-}
-
-/* 暗幕も全面に */
-.hero-dim{ position:absolute; inset:0; z-index:1; }
-/* ===== ヘッダー左右の安全余白 ===== */
 .wrapper{
-  padding-left: 4%;
-  padding-right: 4%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+@media (min-width: 1024px){
+  .wrapper{ padding: 0 48px; }
 }
 
-/* さらにPCだけ少し増やす */
-@media (min-width: 1024px){
-  .wrapper{ padding-left: 48px; padding-right: 48px; }
-}
-/* ===== ヘッダー左右の安全余白 ===== */
-.wrapper{
-  padding-left: 4%;
-  padding-right: 4%;
-}
-
-/* さらにPCだけ少し増やす */
-@media (min-width: 1024px){
-  .wrapper{ padding-left: 48px; padding-right: 48px; }
-}
-/* ===== 全ページ共通ヘッダー整列（一直線） ===== */
+/* ===============================
+   Header
+================================ */
 .page-header{
   display:flex;
   justify-content: space-between;
-  align-items: flex-end;      /* ←下端を揃える */
-  gap: 16px;
-  padding-top: 18px;
-  padding-bottom: 10px;
-}
-
-/* ロゴ＋社名の縦ズレ要因を消す（transform/余計なmarginを無効化） */
-.site-title a{
-  margin-top: 0 !important;
-}
-.site-title span{
-  transform: none !important; /* 以前のtranslateYを殺す */
-  line-height: 1.1;
-}
-
-/* ナビも下端揃え */
-.main-nav{
-  margin-top: 0 !important;
   align-items: flex-end;
-}
-
-/* ===== ナビ文字色：白で固定＋背景に負けない ===== */
-.main-nav a,
-.site-title span{
-  color:#fff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-.main-nav a:hover{
-  opacity: .85;
-}
-/* ===== 全ページ共通：H2とその下Pの統一 ===== */
-.page-title{
-  text-align:center;
-  margin: 0;
-  padding-top: 24px;    /* ←位置を統一 */
-  font-size: 2.2rem;    /* ページで揃える */
-  letter-spacing: .08em;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-
-/* h2直下の説明p（「お知らせ」「囲込み記事」下の文章に使う想定） */
-.page-title + p,
-.page-lead{
-  text-align:center;
-  margin: 10px auto 0;
-  font-size: 16pt;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-  max-width: 980px;
-  padding: 0 4%;
-}
-/* ===== news：本文14pt ===== */
-.news-contents article p,
-.news-contents aside p,
-.news-contents li,
-.news-contents a{
-  font-size: 14pt;
-}
-/* newsページだけ、記事内画像を消したい場合（上部ヒーローは残る） */
-#news .news-contents article img,
-body.news .news-contents article img{
-  display:none;
-}
-/* ===== column：h2下の説明文（page-lead）を16pt白は共通でOK ===== */
-
-/* 囲込み記事の本文を14ptに */
-#column article p,
-body.column article p{
-  font-size: 14pt;
-}
-/* ヘッダーが白背景でも文字が見えるように薄い背景を敷く（全ページ安全） */
-.page-header{
+  gap: 16px;
+  padding: 18px 0 10px;
   background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,0));
   border-radius: 0 0 16px 16px;
 }
-#article3 article p,
-body.article3 article p{
-  font-size:14pt;
+
+.site-title a{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  margin-top: 0 !important;
 }
-/* ===== contact：本文14pt ===== */
-#contact p,
-#contact li,
-#contact a,
-body.contact p,
-body.contact li{
-  font-size: 14pt;
+.logo{ width: 140px; margin-top: 0; }
+.site-title span{
+  font-size: 30px;
+  letter-spacing: 0.3em;
+  line-height: 1.1;
+  transform: none !important;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
 
-/* コメント（textarea）だけ大きく */
-#contact textarea,
-body.contact textarea{
-  font-size: 14pt;
-  min-height: 220px;  /* 好みで300pxでもOK */
-  padding: 14px;
+/* Nav */
+.main-nav{
+  display:flex;
+  gap: 28px;
+  list-style:none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  align-items: flex-end;
+  text-transform: uppercase;
 }
-/* ===== index：黒帯を消す／左右端にかからない／背景が下まで続かない ===== */
-
-/* #home を “最初の1画面だけ” に固定（背景が中盤～下に出るのを止める） */
-#home.hero, #home{
-  height: 100vh;         /* min-heightではなくheight */
-  overflow: hidden;
-  position: relative;
+.main-nav li{ margin: 0; }
+.main-nav a{
+  color:#fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
+.main-nav a:hover{ opacity: .85; }
 
-/* 静止画（LCP） */
+/* ===============================
+   Home Hero (LCP: poster -> video)
+================================ */
 #home.hero{
-  background-image: url("../images/mai_pster.jpg");
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  /* 最初に見せる静止画（ポスター） */
+  background-image: url("../images/mai_poster.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color:#000;
+  background-color: #000;
 }
 
-/* 背景レイヤー */
-.hero-media{
+/* 動画が入る器 */
+#home .hero-media{
   position:absolute;
   inset:0;
   z-index:0;
   opacity:1;
-  transition: opacity 350ms ease;
+  transition: opacity .35s ease;
 }
-.hero-dim{
+
+/* 暗幕 */
+#home .hero-dim{
   position:absolute;
   inset:0;
   z-index:1;
-  opacity:.35;
-  transition: opacity 350ms ease;
-  background: rgba(0,0,0,1);
+  background: rgba(0,0,0,.35);
+  pointer-events:none;
+  transition: opacity .35s ease;
 }
 
-/* 黒帯最終対策：少し拡大して必ず覆う */
-.bg-video{
+/* 動画本体（黒帯防止：少しだけはみ出し） */
+#home .hero-media video.bg-video{
   position:absolute;
-  top:50%;
-  left:50%;
-  width:110vw;
-  height:110vh;
-  transform: translate(-50%,-50%);
+  inset:0;
+  width:102%;
+  height:102%;
+  left:-1%;
+  top:-1%;
   object-fit: cover;
   object-position: center center;
-
-  opacity:0;
-  transition: opacity 500ms ease;
+  transform: none !important;
+  filter: none !important;
+  opacity: 0;
+  transition: opacity .5s ease;
 }
-.hero-media.is-video-ready .bg-video{ opacity:1; }
 
-/* 文字レイヤー */
+/* 動画準備できたらフェードイン */
+#home .hero-media.is-video-ready video.bg-video{ opacity: 1; }
+
+/* 文字は前面 */
 #home .page-header,
 #home .home-content{
   position: relative;
   z-index: 2;
 }
 
-/* ロゴ/ナビが端にかからないように：wrapperの左右余白を増やす（少し右寄り） */
-.wrapper{
-  padding-left: 6%;
-  padding-right: 6%;
+/* home content */
+.home-content{
+  text-align:center;
+  margin-top: 10%;
 }
-@media (min-width:1024px){
-  .wrapper{
-    padding-left: 72px;
-    padding-right: 72px;
-  }
+.home-content .page-title{
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1.35;
+  margin: 0 0 .6em;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 6px 22px rgba(0,0,0,.75);
 }
-/* ===== index: 背景動画の黒帯をさらに潰す ===== */
-#home.hero, #home { height: 100vh; overflow: hidden; position: relative; }
+.home-content p{
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.7;
+  margin: 0 0 2rem;
+  color: rgba(255,255,255,.90);
+  text-shadow: 0 4px 16px rgba(0,0,0,.65);
+}
+.button{
+  display:inline-block;
+  font-size: 1.2rem;
+  background:#472f91;
+  color:#fff;
+  border-radius:5px;
+  padding: 14px 28px;
+}
+.button:hover{ background:#0090aa; }
 
-.bg-video{
-  position:absolute;
-  top:50%;
-  left:50%;
-  width: 140vw;      /* 110→140 に拡大 */
-  height: 140vh;
-  transform: translate(-50%,-50%);
-  object-fit: cover;
-  object-position: center center;
+/* スマホ・省モーション：動画を表示しない（JS側でも読み込みを止める想定） */
+@media (max-width: 768px){
+  #home .hero-media{ display:none; }
+  #home .hero-dim{ background: rgba(0,0,0,.25); }
 }
-/* ===== “上の画像だけ”に統一：hero以外のbig-bgは背景なし ===== */
-.big-bg{ background-image: none !important; }          /* いったん全て消す */
-.page-hero.big-bg{ background-image: inherit !important; } /* heroだけ許可 */
-
-/* heroには必ず背景を与える（各ページで指定する） */
-.page-hero{
-  min-height: 270px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-/* ===== 上部背景はここまで（高さ固定） ===== */
-.page-hero{
-  height: 270px;          /* ←上部背景の高さ（好みで240/300に調整） */
-  position: relative;
-  overflow: hidden;
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@media (prefers-reduced-motion: reduce){
+  #home .hero-media{ display:none; }
 }
 
-/* 上部背景内のh2/説明文を中央寄せしたい場合 */
-.page-hero .hero-inner{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* 縦中央（不要ならflex-startに） */
-  align-items: center;
-  text-align: center;
-}
-
-/* h2/説明文の見た目（あなたの指定どおり） */
-.page-title{
-  margin: 0;
-  font-size: 2.2rem;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-.page-lead{
-  margin-top: 10px;
-  font-size: 16pt;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-
-/* 本文エリア（背景は白でOK） */
-.page-body{
-  padding-top: 28px;
-  padding-bottom: 60px;
-  background:#f7f7fb; 
-}
-/* ===== 前のレイアウトに戻す：上だけ背景／本文は白 ===== */
-
-/* 上部背景は固定の高さで止める */
+/* ===============================
+   Page Hero (news/column/contact etc.)
+   「上だけ背景、本文は白」
+================================ */
 .page-hero{
   height: 270px;
   position: relative;
   overflow: hidden;
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
 }
-
-/* 上部のh2/説明文 */
 .page-hero .hero-inner{
-  height: calc(270px - 70px); /* ヘッダー分を少し引く（不要なら100%でもOK） */
-  display: flex;
+  height: 100%;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align:center;
+  padding: 24px 0;
 }
-
-/* 上部は白文字 */
-.page-hero .page-title,
+.page-hero .page-title{
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: .08em;
+  color:#fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
 .page-hero .page-lead{
+  margin: 10px auto 0;
+  max-width: 980px;
+  padding: 0 4%;
+  font-size: 16pt;
   color:#fff;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
 
-/* 本文エリア：必ず白背景＋文字色を戻す（消える対策） */
 .page-body{
   background:#fff;
-  padding: 28px 0 60px;
+  padding: 32px 0 64px;
   position: relative;
   z-index: 1;
 }
@@ -1203,455 +219,472 @@ body.contact textarea{
   color:#472f91;
   text-shadow: none;
 }
-
-/* 本文14pt（要望） */
 .page-body p,
-.page-body li{
-  font-size: 14pt;
-}
+.page-body li{ font-size: 14pt; }
 
-/* ★重要：以前「newsの下部画像を消す」指定を入れていた場合の無効化 */
-#news .news-contents article img{
-  display:block !important;
-}
+/* ページごとの背景（必要なら増やす） */
+#news   .page-hero{ background-image: url("../images/14yoake.png"); }
+#column .page-hero{ background-image: url("../images/8yuuyami.png"); }
+#contact .page-hero{ background-image: url("../images/3morning.png"); }
 
-/* 記事とサイドのレイアウト */
+/* ===============================
+   News layout (article + aside)
+================================ */
 .news-contents{
   display:flex;
   justify-content: space-between;
   gap: 24px;
 }
-.news-contents article{ width:74%; }
-.news-contents aside{ width:22%; }
+.news-contents article{ width: 74%; }
+.news-contents aside{ width: 22%; }
 
 @media (max-width: 900px){
   .news-contents{ flex-direction: column; }
   .news-contents article, .news-contents aside{ width:100%; }
 }
 
-/* 画像の下に余白 */
-.news-contents article img{
-  margin: 16px 0 20px;
+.post-info{ position: relative; margin-bottom: 40px; padding-top: 4px; }
+.post-date{
+  background:#0bd;
+  border-radius:50%;
+  color:#fff;
+  width:100px;
+  height:100px;
+  font-size:1.625rem;
+  text-align:center;
+  position:absolute;
+  top:0;
+  padding-top:10px;
+}
+.post-date span{
+  font-size:1rem;
+  border-top:1px rgba(255,255,255,.5) solid;
+  padding-top:6px;
+  display:block;
+  width:60%;
+  margin:0 auto;
+}
+.post-title{ font-size:2rem; font-weight: normal; }
+.post-title, .post-cat{ margin-left: 120px; }
+
+article p{ margin: 0 0 1rem; white-space: pre-line; }
+article img{ margin: 16px 0 20px; }
+
+/* sidebar */
+.sub-title{
+  font-size:1.375rem;
+  padding:0 8px 8px;
+  border-bottom:2px #0bd solid;
+  font-weight:normal;
+}
+.sub-menu{ list-style:none; margin: 0 0 60px; padding:0; }
+.sub-menu li{ border-bottom:1px #ddd solid; }
+.sub-menu a{ display:block; padding:10px; color:#432; }
+.sub-menu a:hover{ color:#0bd; }
+aside p{ padding: 12px 10px; }
+
+/* ===============================
+   Grid (article cards etc.)
+================================ */
+.grid{
+  display:grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+.grid .item{ display:block; color: inherit; }
+.grid .item:hover{ opacity: .85; }
+.grid .item p{ margin-top: 8px; }
+
+/* ===============================
+   Article page (single column)
+================================ */
+.article-layout{ display:block; margin: 60px 0 80px; }
+.article-main{ width: 100%; }
+.article-heading{
+  font-size: 1.6rem;
+  margin: 40px 0 16px;
+  border-bottom: 2px solid #472f91;
+  padding-bottom: 6px;
+}
+.back-link{ display:inline-block; margin-top: 40px; color:#472f91; }
+.back-link:hover{ text-decoration: underline; }
+
+/* ===============================
+   Contact form
+================================ */
+form div{ margin-bottom: 14px; }
+label{ font-size: 1.125rem; margin-bottom: 10px; display:block; }
+input[type="text"], input[type="email"], textarea{
+  background: rgba(255,255,255,.5);
+  border: 1px #fff solid;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+input[type="text"], input[type="email"]{
+  width: 100%;
+  max-width: 240px;
+}
+textarea{
+  width: 100%;
+  max-width: 480px;
+  height: 10rem;
+}
+input[type="submit"]{
+  border:none;
+  cursor:pointer;
+  line-height:1;
+}
+
+/* ===============================
+   Footer
+================================ */
+footer{
+  background:#432;
+  text-align:center;
+  padding: 26px 0;
+}
+footer p{ color:#fff; font-size: 1rem; margin:0; }
+/* ===== HERO 背景バリエーション復活 ===== */
+.hero--yoake{ background-image: url("../images/14yoake.png"); }
+.hero--yuuyami{ background-image: url("../images/8yuuyami.png"); }
+.hero--sky{ background-image: url("../images/5sky.png"); }
+.hero--asagiri{ background-image: url("../images/1asagiri.png"); }
+.hero--hinode{ background-image: url("../images/5hinode.png"); }
+.hero--moon{ background-image: url("../images/12moon.png"); }
+.hero--all{ background-image: url("../images/3morning.png"); }
+
+.hero{
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
 }
 /* =====================================================
-   news 上部背景：1asagiri.png
-   ・切らない
-   ・小さくしすぎない
-   ・黒帯を最小化
+   ✅ 1. HERO 背景をフル表示（逆さ富士を切らない）
 ===================================================== */
-
-#news .page-hero{
-  /* 高さを大きく取る（黒帯削減の決め手） */
-  height: clamp(600px, 72vh, 1000px);
-
-  background-image: url("../images/1asagiri.png");
-
-  /* 切らない最優先 */
-  background-size: contain;
-  background-repeat: no-repeat;
-
-  /* 逆さ富士を活かすため下寄せ */
-  background-position: center bottom;
-
-  /* 黒帯を感じにくい濃紺（真っ黒より自然） */
-  background-color: #0b0f14;
-
-  position: relative;
-  overflow: hidden;
+.hero,
+.page-hero{
+  min-height: 100vh !important;       /* ハーフ表示をやめる */
+  background-size: contain !important;/* 切らない最優先 */
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+  background-color: #0b0f14;          /* 黒帯を濃紺に */
 }
 
-/* 見出しは写真を邪魔しないよう上寄せ */
-#news .page-hero .hero-inner{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 22px;
+/* =====================================================
+   ✅ 2. news / contact 背景 復活
+===================================================== */
+#news .hero{
+  background-image: url("../images/14yoake.png") !important;
+}
+#column .hero{
+  background-image: url("../images/12moon.png") !important;
 }
 
-/* 本文は完全に白背景で独立 */
-#news .page-body{
-  background: #fff;
+#contact .hero{
+  background-image: url("../images/3morning.png") !important;
 }
 
-/* ===== スマホ最適化 ===== */
-@media (max-width: 768px){
-  #news .page-hero{
-    height: clamp(420px, 80vh, 700px);
-    background-position: center bottom;
+/* =====================================================
+   ✅ 3. 本文 14pt 絶対保証
+===================================================== */
+.page-body,
+.page-body p,
+.page-body li,
+article p,
+article li{
+  font-size: 14pt !important;
+}
+
+/* =====================================================
+   ✅ 4. ヘッダー完全統一（全ページ同じ並び）
+===================================================== */
+.page-header{
+  display:flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;   /* ←一直線 */
+  padding: 18px 6% !important;      /* ←左右余白 */
+}
+
+@media (min-width:1024px){
+  .page-header{
+    padding-left: 72px !important;
+    padding-right: 72px !important;
   }
 }
-/* 本文は白背景で分離（上下セパレーター） */
-.page-body{
-  background: #fff;
-  padding: 32px 0 64px;
+
+.site-title span{
+  font-size: 30px !important;
 }
 
-/* 本文文字 */
-.page-body p{
-  font-size: 14pt;
-  color: #472f91;
-}
-/* ===== ページ別 HERO 背景指定 ===== */
-
-/* column：夕闇 */
-#column .hero{
-  background-image: url("../images/8yuuyami.png");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+.main-nav{
+  font-size: 1.25rem !important;
 }
 
-/* contact：朝 */
-#contact .hero{
-  background-image: url("../images/3morning.png");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-}
-/* ===== news HERO 背景を正規化 ===== */
-#news .hero{
-  background-image: url("../images/14yoake.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-/* 背景付きの共通指定 */
-.big-bg{
-  background-repeat: no-repeat;
-  background-position: center center; /* ← 左寄り対策 */
-  background-size: cover;             /* ← 基本はこれでOK */
-}
-.hero--news{ background-position: center 35%; } /* 例：少し下を見せる */
-/* ===== contactのヘッダーメニュー文字サイズを他ページと統一 ===== */
-#contact .main-nav{
-  font-size: 1.25rem;
-}
-#contact .main-nav a{
-  font-size: 18pt;   /* 親(.main-nav)のサイズを使う */
-}
-/* 旧：#contact a まで全部14pt（ナビも巻き込む） */
-
-/* 新：本文・フォームだけ14pt */
-#contact form,
-#contact form a,
-#contact p,
-#contact li{
-  font-size: 14pt;
-}
-.bg-video{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  background: #000;
+.main-nav a{
+  font-size: 1.25rem !important;
 }
 
-.bg-video video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  pointer-events: none;
-
-  /* 重要：ぼけやすい要因を禁止 */
-  filter: none !important;
-  transform: none !important;
-  opacity: 1 !important;
-}
-.bg-video video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50% !important; /* ←中央基準に固定 */
-}
-.bg-video{
-  transform: none !important;
-}
-
-.bg-video video{
-  transform: none !important;
-}
-.bg-video video{
-  object-fit: cover;
-  object-position: 50% 35% !important; /* 上を少し見せる */
-}
-/* ===== 背景動画：最終版（中央固定・ズレ防止）===== */
-.bg-video{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  background: #000;
-  transform: none !important;
-}
-
-.bg-video video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center !important; /* ←ここが肝 */
-  transform: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-  pointer-events: none;
-}
-/* ===== 背景動画（video単体が.bg-videoの場合）===== */
-video.bg-video{
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center !important;
-  transform: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-  pointer-events: none;
-  background: #000;
-}
-/* 背景動画：黒帯(端の丸め)を消す */
-.bg-video video{
-  width: 104%;
-  height: 104%;
-}
-/* ヘッダー左右に必ず余白（他ページと統一） */
+/* =====================================================
+   ✅ 5. TOPだけ両端いっぱい＋左右余白
+===================================================== */
 #home .page-header{
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 6% !important;
+  padding-right: 6% !important;
 }
-@media (min-width: 1024px){
+
+@media (min-width:1024px){
   #home .page-header{
-    padding-left: 48px;
-    padding-right: 48px;
+    padding-left: 72px !important;
+    padding-right: 72px !important;
+  }
+
+
+/* =====================================================
+   ✅ 6. TOPのH2サイズを60%へ
+===================================================== */
+#home .page-title{
+  font-size: 180% !important;  /* 今の60% */
+}
+/* ===== contact タイトル中央＋白 ===== */
+#contact .page-title{
+  color:#fff !important;
+  text-align:center !important;
+  margin:0 auto !important;
 }
 /* =========================================
-   全ページ共通：ヘッダー左右余白を完全統一
-   （index: header.wrapper / 他: header内 wrapper）
+   contact1：H1〜送信ボタンまで中央寄せ
 ========================================= */
 
-:root{
-  --header-pad: 4%;
-}
-@media (min-width: 1024px){
-  :root{ --header-pad: 48px; }
-}
-
-/* index.html：<header class="page-header wrapper"> */
-.page-header.wrapper{
-  padding-left: var(--header-pad) !important;
-  padding-right: var(--header-pad) !important;
+/* フォーム全体を中央に */
+#contact form{
+  max-width: 720px;
+  margin: 40px auto 0 auto !important;
+  text-align: center;
 }
 
-/* contact/column/news：<header class="page-header"><div class="wrapper ..."> */
-.page-header:not(.wrapper) .wrapper{
-  padding-left: var(--header-pad) !important;
-  padding-right: var(--header-pad) !important;
-}
-/* 旧：#contact a まで全部14pt（ナビも巻き込む） */
-#contact form,
-#contact form a,
-#contact p,
-#contact li{
-  font-size: 14pt;
-}
-/* 実務フィルタの余白調整 */
-form div label{
-  cursor: pointer;
+/* 各フォームブロックも中央 */
+#contact form div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom: 24px;
 }
 
-form input[type="checkbox"]{
-  margin-right: 6px;
+/* ラベル中央 */
+#contact form label{
+  text-align:center;
 }
-/* ==============================
-   contact：スパム防止文言の調整
-   ============================== */
 
-/* スパム防止テキスト（p / label 両対応） */
-#contact .spam-note,
-#contact label.spam-note,
-#contact form label,
-#contact form p {
-  display: block;
-  margin-top: 18px;     /* ← メッセージ枠との間隔 */
-  margin-bottom: 18px;  /* ← 送信ボタンとの間隔 */
+/* 入力欄中央 */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea{
+  width: 100%;
+  max-width: 520px;
+}
 
-  color: #ffffff;       /* ← 白文字 */
-  font-size: 14pt;      /* ← サイズ（12〜16ptで調整可） */
+/* 送信ボタン中央 */
+#contact input[type="submit"]{
+  margin-top: 28px;
+  padding: 14px 36px;
+  font-size: 16px;
+}
+
+
+/* ===== contact 情報と地図 横並び復活 ===== */
+#location .wrapper{
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:flex-start !important;
+  gap:40px;
+}
+
+.location-info{
+  width:40% !important;
+}
+
+.location-map{
+  width:55% !important;
+}
+
+@media (max-width:900px){
+  #location .wrapper{
+    flex-direction:column !important;
+  }
+  .location-info,
+  .location-map{
+    width:100% !important;
+  }
+}
+/* ===== contact 背景を画面上端から ===== */
+#contact .hero{
+  min-height:100vh !important;
+  background-position:center top !important;
+}
+/* ===== 全ページヘッダー1列固定 ===== */
+.page-header{
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  flex-wrap:nowrap !important; /* 折り返し禁止 */
+}
+
+/* ナビは横一列固定 */
+.main-nav{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  gap:36px;
+}
+
+.main-nav li{
+  margin-left:0 !important;
+}
+.page-header{
+  padding-left:6% !important;
+  padding-right:6% !important;
+}
+
+@media (min-width:1024px){
+  .page-header{
+    padding-left:72px !important;
+    padding-right:72px !important;
+  }
+}
+#contact .hero{
+  min-height:100vh !important;
+}
+/* contact 注意書き：白固定 */
+#contact .contact-note{
+  margin-top: 16px;
+  margin-bottom: 28px;
+
+  font-size: 13pt;
   line-height: 1.6;
 
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6); /* 背景に負けない */
+  color: #ffffff !important;   /* ← 完全な白 */
+
+  text-align: center;
+
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+/* =====================================
+   ヘッダー完全1列固定（全ページ）
+===================================== */
+
+/* header自体にはflexをかけない */
+.page-header{
+  padding: 18px 0 !important;
 }
 
-/* チェックボックスがある場合の微調整 */
-#contact input[type="checkbox"] {
-  margin-right: 6px;
-  transform: translateY(1px);
+/* 中のwrapperをflexにする（←ここが重要） */
+.page-header .wrapper{
+  display:flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;   /* 折り返し禁止 */
 }
 
-/* 送信ボタンと被らないように */
-#contact input[type="submit"] {
-  margin-top: 24px;
-}
-/* ===== index 背景動画：画面フル（文字に影響なし） ===== */
-
-/* #home を“1画面”として固定 */
-#home{
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+/* ナビも折り返し禁止 */
+.main-nav{
+  display:flex !important;
+  flex-wrap: nowrap !important;
+  gap: 36px !important;
 }
 
-/* 背景レイヤー（動画の器） */
-#home .hero-media{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-/* 暗幕 */
-#home .hero-dim{
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0,0,0,0.35);
-}
-
-/* 動画本体：100vw/100vhで必ず覆う */
-#home .bg-video{
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center center;
-  transform: none !important;
-  filter: none !important;
-}
-
-/* 文字（ヘッダー/本文）は必ず上へ */
-#home .page-header,
-#home .home-content{
-  position: relative;
-  z-index: 2;
-}
-/* ===== index動画：最終固定（これが勝つ） ===== */
-#home { position: relative; height: 100vh; overflow: hidden; }
-
-#home .hero-media { position: absolute; inset: 0; z-index: 0; }
-#home .hero-dim   { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,.35); }
-
-/* canplay まで透明 → 準備できたら表示 */
-#home .bg-video { opacity: 0; transition: opacity .4s ease; }
-#home .hero-media.is-video-ready .bg-video { opacity: 1; }
-
-/* videoを全面に */
-#home video.bg-video{
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center center;
-  transform: none !important;
-  filter: none !important;
-}
-
-/* 文字を前面に */
-#home .page-header, #home .home-content { position: relative; z-index: 2; }
-/* ===== index 背景動画：黒帯ゼロ（最終上書き） ===== */
-#home{
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* 動画の器を画面いっぱいに */
-#home .hero-media{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-/* video自体を確実に “画面を覆う” 設定 */
-#home .hero-media video.bg-video{
-  position: absolute;
-  inset: 0;
-
-  /* ★ここが黒帯対策の本体 */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;            /* 画面を覆う（切れてOK） */
-  object-position: center center;
-
-  /* 以前のズラし/縮小/ぼかしが残っても無効化 */
-  transform: none !important;
-  filter: none !important;
-}
-
-/* それでも左右に2〜3mm出るブラウザ対策（保険） */
-#home .hero-media video.bg-video{
-  width: 102%;
-  height: 102%;
-  left: -1%;
-  top: -1%;
-}
-#home.hero{ height: 100vh !important; min-height: 100vh !important; 
+/* liの余計なmargin削除 */
+.main-nav li{
+  margin-left: 0 !important;
 }
 /* ===============================
-   ✅ index 背景動画：黒帯ゼロ・フル画面固定
-================================ */
-
-/* 1. 親要素の固定 */
-#home {
-  position: relative;
-  height: 100vh !important; /* 画面の高さに固定 */
-  min-height: 100vh !important;
-  overflow: hidden;
+   全ページ：ヒーロー内 見出し＆リード白＋中央
+=============================== */
+.hero .page-title,
+.hero h1,
+.hero h2{
+  color:#ffffff !important;
+  text-align:center !important;
 }
 
-/* 2. 動画の器（hero-media）を全面に */
-#home .hero-media {
-  position: absolute;
-  inset: 0; /* 上下左右 0 */
-  z-index: 0;
-  overflow: hidden;
+.hero .page-title + p,
+.hero .page-lead{
+  color:#ffffff !important;
+  text-align:center !important;
+}
+/* ===============================
+   ヘッダー一直線＋左右余白統一
+=============================== */
+.page-header{
+  padding: 18px 0 !important;   /* header自体は余白なし */
 }
 
-/* 3. 動画本体：ここが解決の鍵 */
-#home .hero-media images.bg-mai.mp4.mp4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* 画面よりわずかに大きく配置して、隙間を物理的に防ぐ */
-  width: 102vw; 
-  height: 102vh;
-  /* 中央配置 */
-  transform: translate(-50%, -50%) !important;
-  /* アスペクト比を無視して埋める */
-  object-fit: cover !important;
-  object-position: center center;
-  
-  /* ぼかしや透過の干渉を防ぐ */
-  filter: none !important;
+.page-header .wrapper{
+  display:flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;   /* ← 一直線 */
+  flex-wrap: nowrap !important;
+
+  padding-left: 6% !important;      /* TOPと同じ余白 */
+  padding-right: 6% !important;
 }
 
-/* 4. 暗幕も全面に */
-#home .hero-dim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none; /* 下の動画の再生を邪魔しない */
+@media (min-width:1024px){
+  .page-header .wrapper{
+    padding-left:72px !important;
+    padding-right:72px !important;
+  }
 }
 
-/* 5. コンテンツを前面へ */
-#home .page-header,
-#home .home-content {
-  position: relative;
-  z-index: 2;
+/* ナビ折り返し禁止 */
+.main-nav{
+  display:flex !important;
+  flex-wrap: nowrap !important;
+  gap:36px !important;
 }
+
+.main-nav li{
+  margin-left:0 !important;
+}
+/* ===============================
+   contact フォーム文字色 強制白
+=============================== */
+
+#contact form label,
+#contact form p,
+#contact form span,
+#contact form div{
+  color: #ffffff !important;
+}
+
+/* 入力中の文字は黒に戻す */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea{
+  color:#111 !important;
+}
+/* ===============================
+   contact select（選択してください）白固定
+=============================== */
+
+#contact select{
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid #ffffff;
+}
+
+/* optionは白背景に黒文字（読みやすく） */
+#contact select option{
+  color: #000000 !important;
+  background: #ffffff;
+}
+
+
+
 
 

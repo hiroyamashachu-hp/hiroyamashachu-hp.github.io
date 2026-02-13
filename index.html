@@ -114,8 +114,59 @@
 
 })();
 </script>
+<audio id="bgm" src="audio/bgm.mp3" loop playsinline preload="auto"></audio>
 
-<!-- BGM -->
-<audio id="bgm" src="audio/bgm.mp3" loop preload="auto"></audio>
+<script>
+(() => {
+  const bgm = document.getElementById('bgm');
+  if (!bgm) return;
+
+  bgm.volume = 0.3;
+  bgm.muted = false;
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.id = 'fugaToggle';
+  btn.textContent = '風雅音';
+  btn.setAttribute('style', `
+    position: fixed !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    left: auto !important;
+    top: auto !important;
+    z-index: 999999 !important;
+    padding: 9px 14px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: 999px !important;
+    background: rgba(0,0,0,.18) !important; /* さらに透明 */
+    color: rgba(255,255,255,.85) !important;
+    cursor: pointer !important;
+    font-size: 13px !important;
+    letter-spacing: 0.10em !important;
+    line-height: 1 !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12) !important;
+    opacity: .72 !important;
+  `);
+  document.body.appendChild(btn);
+
+  const sync = () => {
+    const sounding = !bgm.muted && !bgm.paused;
+    btn.textContent = sounding ? '風雅音止める' : '風雅音';
+  };
+
+  btn.addEventListener('click', async (e) => {
+    e.stopPropagation();
+    if (!bgm.paused && !bgm.muted) {
+      bgm.muted = true; sync(); return;
+    }
+    try { bgm.muted = false; await bgm.play(); } catch (err) { bgm.muted = true; }
+    sync();
+  });
+
+  bgm.play().then(sync).catch(() => { bgm.muted = true; sync(); });
+})();
+</script>
 </body>
 </html>
