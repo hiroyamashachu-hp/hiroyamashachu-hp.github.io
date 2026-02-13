@@ -683,7 +683,66 @@ article li{
   color: #000000 !important;
   background: #ffffff;
 }
+/* ======================================
+   news / column 背景 黒帯解消（幅優先）
+====================================== */
 
+/* news */
+#news .hero{
+  min-height: 130vh !important;       /* 高さを長くする */
+  background-size: cover !important;  /* 横幅優先で埋める */
+  background-position: center center !important;
+}
+
+/* column */
+#column .hero{
+  min-height: 135vh !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+
+/* index */
+#index .hero{
+  min-height: 140vh !important;       /* 高さを長くする */
+  background-size: cover !important;  /* 横幅優先で埋める */
+  background-position: center center !important;
+}
+#article3 .hero{
+  min-height: 160vh !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+/* ======================================
+   article 背景 個別固定（黒帯なし）
+====================================== */
+
+#article1 .hero{
+  background-image: url("../images/purple.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  min-height: 120vh !important;
+}
+
+#article2 .hero{
+  background-image: url("../images/5sky.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  min-height: 160vh !important;
+}
+#article3 .hero{
+  background-image: url("../images/14yoake.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  min-height: 160vh !important;
+}
+
+#article4 .hero{
+  background-image: url("../images/8yuuyami.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  min-height: 160vh !important;
+}
 
 
 
