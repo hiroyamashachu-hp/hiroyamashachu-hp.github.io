@@ -700,8 +700,12 @@ article li{
   background-size: cover !important;
   background-position: center center !important;
 }
-
-
+/* column */
+#contact .hero{
+  min-height: 135vh !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
 /* index */
 #index .hero{
   min-height: 140vh !important;       /* 高さを長くする */
@@ -725,7 +729,7 @@ article li{
 }
 
 #article2 .hero{
-  background-image: url("../images/5sky.png") !important;
+  background-image: url("../images/4hinode.png") !important;
   background-size: cover !important;
   background-position: center center !important;
   min-height: 160vh !important;
@@ -743,7 +747,38 @@ article li{
   background-position: center center !important;
   min-height: 160vh !important;
 }
+#contact .hero{
+  background-image: url("../images/4hinode.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  min-height: 160vh !important;
+}
+/* まず黒帯が出ない土台 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: transparent; /* 黒を見せない */
+}
 
+/* 背景フル表示の共通クラス（article2/3/4で共通使用） */
+.hero--all, .big-bg {
+  width: 100vw;                 /* 画面幅いっぱい */
+  min-height: 100vh;            /* 画面高さいっぱい */
+  background-position: center;
+  background-size: cover;       /* 余白が出ない */
+  background-repeat: no-repeat;
+}
 
+/* 横スクロールが出てる場合の保険 */
+body { overflow-x: hidden; }
 
-
+body#news h2 {
+  margin-top: 150px;
+}
+body#column h2 {
+  margin-top: 215px;
+}
+body#article4 h2 {
+  margin-top: 215px;
+}
