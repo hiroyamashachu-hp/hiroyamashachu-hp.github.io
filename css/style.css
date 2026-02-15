@@ -163,14 +163,23 @@ img{ max-width: 100%; height: auto; display: block; }
 }
 .button:hover{ background:#0090aa; }
 
-/* スマホ・省モーション：動画を表示しない（JS側でも読み込みを止める想定） */
+/* ===== スマホでもhero-mediaは表示（動画が無理ならポスターが見えるだけ） ===== */
 @media (max-width: 768px){
-  #home .hero-media{ display:none; }
-  #home .hero-dim{ background: rgba(0,0,0,.25); }
+  #home .hero-media{ display:block; }             /* ←消さない */
+  #home .hero-media video.bg-video{
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+  }
+  #home .hero-dim{ background: rgba(0,0,0,.28); }
 }
+
+/* 省モーションの人は「動画を読み込まない」方針にする（表示は消さない） */
 @media (prefers-reduced-motion: reduce){
-  #home .hero-media{ display:none; }
+  #home .hero-media video.bg-video{ display:none; } /* 動画だけ消す */
 }
+
 
 /* ===============================
    Page Hero (news/column/contact etc.)
@@ -774,11 +783,18 @@ html, body {
 body { overflow-x: hidden; }
 
 body#news h2 {
-  margin-top: 150px;
+  margin-top: 120px;
 }
 body#column h2 {
   margin-top: 215px;
 }
 body#article4 h2 {
   margin-top: 215px;
+}
+/* newsページのh2直下のpを14pxにする */
+#news h2 + p {
+    font-size: 20px;
+}
+.location-map {
+  margin-top: 60px;   /* 数字を増やすとさらに下がる */
 }
