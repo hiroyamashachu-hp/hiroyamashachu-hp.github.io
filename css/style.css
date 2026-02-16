@@ -798,3 +798,63 @@ body#article4 h2 {
 .location-map {
   margin-top: 60px;   /* 数字を増やすとさらに下がる */
 }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+/* ===== location：基本は2カラム（必要なら折り返し） ===== */
+#location .wrapper{
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* 幅が足りない時だけ下に落ちる */
+}
+
+.location-info{
+  flex: 1 1 360px;   /* 最低360px確保、足りなければ下へ */
+  min-width: 280px;
+}
+
+.location-map{
+  flex: 1 1 360px;
+  min-width: 280px;
+  margin-top: 40px;  /* 先ほどの「少し下げる」も維持 */
+}
+
+.location-map iframe{
+  width: 100%;
+  height: 400px;
+  display: block;
+  border: 0;
+}
+/* スマホ縦：1カラムで自然に */
+@media (max-width: 768px) and (orientation: portrait){
+  #location .wrapper{
+    flex-direction: column;
+  }
+  .location-map{
+    margin-top: 24px; /* 縦並びの時は少し控えめに */
+  }
+  .location-map iframe{
+    height: 320px;
+  }
+}
+
+/* スマホ横：なるべくPC처럼横並びを維持 */
+@media (max-width: 1024px) and (orientation: landscape){
+  #location .wrapper{
+    flex-direction: row;
+  }
+  .location-map{
+    margin-top: 40px;
+  }
+}
+/* 本文の文字サイズを端末幅に合わせて自然に */
+body{
+  font-size: 16px;
+}
+
+#location p{
+  font-size: clamp(14px, 1.7vw, 16px);
+  line-height: 1.9;
+}
